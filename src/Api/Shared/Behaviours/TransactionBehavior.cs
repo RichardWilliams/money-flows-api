@@ -23,9 +23,7 @@ internal sealed class TransactionBehavior<TRequest, TResponse>(
 
         logger.LogDebug("Beginning transaction for {RequestName}", typeof(TRequest).Name);
 
-        await using var transaction = await dbContext.Database.BeginTransactionAsync(
-            IsolationLevel.ReadCommitted,
-            cancellationToken);
+        await using var transaction = await dbContext.Database.BeginTransactionAsync(cancellationToken);
 
         try
         {
