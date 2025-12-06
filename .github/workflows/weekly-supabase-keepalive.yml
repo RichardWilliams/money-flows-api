@@ -1,0 +1,17 @@
+name: Supabase Keep-Alive
+
+on:
+  schedule:
+    # Run every Sunday at 3 AM UTC
+    - cron: '0 3 * * 0'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Wake Supabase
+      run: |
+        curl -f https://your-project.supabase.co/rest/v1/properties?limit=1 \
+          -H "apikey: ${{ secrets.SUPABASE_ANON_KEY }}" \
+          || echo "Failed to wake Supabase - update URL when Supabase is configured"
