@@ -3,6 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/VisualStudio.gitignore
 
+# Project progress and tracking files (local only)
+.progress/
+
 # User-specific files
 *.rsuser
 *.suo
