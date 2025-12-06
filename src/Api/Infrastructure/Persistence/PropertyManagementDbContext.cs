@@ -1,4 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using PropertyManagement.Api.Features.Expenses.Domain;
+using PropertyManagement.Api.Features.Properties.Domain;
+using PropertyManagement.Api.Features.Tenants.Domain;
 
 namespace PropertyManagement.Api.Infrastructure.Persistence;
 
@@ -9,10 +12,13 @@ public sealed class PropertyManagementDbContext : DbContext
     {
     }
 
-    // DbSets will be added as features are implemented
-    // public DbSet<PropertyEntity> Properties => Set<PropertyEntity>();
-    // public DbSet<ParticipantEntity> Participants => Set<ParticipantEntity>();
-    // public DbSet<MoneyFlowEntity> MoneyFlows => Set<MoneyFlowEntity>();
+    // DbSets for Phase 2 features
+    public DbSet<Property> Properties => Set<Property>();
+    public DbSet<Expense> Expenses => Set<Expense>();
+    public DbSet<ExpenseCategory> ExpenseCategories => Set<ExpenseCategory>();
+    public DbSet<ExpenseAttachment> ExpenseAttachments => Set<ExpenseAttachment>();
+    public DbSet<Tenant> Tenants => Set<Tenant>();
+    public DbSet<Lease> Leases => Set<Lease>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

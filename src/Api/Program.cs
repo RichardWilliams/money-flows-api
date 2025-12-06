@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using PropertyManagement.Api.Features.Expenses.Endpoints;
+using PropertyManagement.Api.Features.Properties.Endpoints;
+using PropertyManagement.Api.Features.Tenants.Endpoints;
 using PropertyManagement.Api.Infrastructure.Configuration;
 using PropertyManagement.Api.Infrastructure.Persistence;
 using PropertyManagement.Api.Shared.Exceptions;
@@ -183,11 +186,10 @@ app.UseExceptionHandler(errorApp => errorApp.Run(async context =>
     await context.Response.WriteAsJsonAsync(problemDetails);
 }));
 
-// Feature endpoints will be registered here
-// PropertyManagement.Features.Properties.Configure.Endpoints(app);
-// PropertyManagement.Features.Participants.Configure.Endpoints(app);
-// PropertyManagement.Features.MoneyFlows.Configure.Endpoints(app);
-// PropertyManagement.Features.Reports.Configure.Endpoints(app);
+// Phase 2 Feature Endpoints
+app.MapPropertyEndpoints();
+app.MapExpenseEndpoints();
+app.MapTenantEndpoints();
 
 app.Run();
 
