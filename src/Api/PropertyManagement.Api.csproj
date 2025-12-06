@@ -19,8 +19,8 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.11.*" />
 
     <!-- Mapping -->
-    <PackageReference Include="AutoMapper" Version="13.0.*" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="13.0.*" />
+    <PackageReference Include="AutoMapper" Version="12.0.*" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.*" />
 
     <!-- Database -->
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.*">
