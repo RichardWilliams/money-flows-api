@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PropertyManagement.Api.Features.Expenses.Endpoints;
+using PropertyManagement.Api.Features.MoneyFlows.Endpoints;
 using PropertyManagement.Api.Features.Properties.Endpoints;
 using PropertyManagement.Api.Features.Tenants.Endpoints;
 using PropertyManagement.Api.Infrastructure.Configuration;
@@ -190,6 +191,7 @@ app.UseExceptionHandler(errorApp => errorApp.Run(async context =>
 app.MapPropertyEndpoints();
 app.MapExpenseEndpoints();
 app.MapTenantEndpoints();
+app.MapMoneyFlowEndpoints();
 
 app.Run();
 

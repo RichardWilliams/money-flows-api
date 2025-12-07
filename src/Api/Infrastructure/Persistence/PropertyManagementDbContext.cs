@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using PropertyManagement.Api.Features.Expenses.Domain;
+using PropertyManagement.Api.Features.MoneyFlows.Domain;
 using PropertyManagement.Api.Features.Properties.Domain;
 using PropertyManagement.Api.Features.Tenants.Domain;
 
@@ -19,6 +20,7 @@ public sealed class PropertyManagementDbContext : DbContext
     public DbSet<ExpenseAttachment> ExpenseAttachments => Set<ExpenseAttachment>();
     public DbSet<Tenant> Tenants => Set<Tenant>();
     public DbSet<Lease> Leases => Set<Lease>();
+    public DbSet<MoneyFlow> MoneyFlows => Set<MoneyFlow>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
