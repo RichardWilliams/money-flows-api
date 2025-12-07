@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <!-- Swagger/OpenAPI -->
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.*" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.*" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.*" />
 
     <!-- CQRS + Validation -->
@@ -23,11 +23,11 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.*" />
 
     <!-- Database -->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.*">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.*">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.*" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.*" />
 
     <!-- Logging (Serilog) -->
     <PackageReference Include="Serilog.AspNetCore" Version="8.0.*" />
@@ -36,8 +36,8 @@
     <PackageReference Include="Serilog.Formatting.Compact" Version="3.0.*" />
 
     <!-- Health Checks -->
-    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="9.0.*" />
-    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="9.0.*" />
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.*" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="8.0.*" />
   </ItemGroup>
 
 </Project>
