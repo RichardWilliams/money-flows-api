@@ -53,10 +53,6 @@ internal static class ServiceCollectionExtensions
                     npgsqlOptions.MigrationsHistoryTable(
                         "__EFMigrationsHistory",
                         "property_management");
-                    npgsqlOptions.EnableRetryOnFailure(
-                        maxRetryCount: 3,
-                        maxRetryDelay: TimeSpan.FromSeconds(5),
-                        errorCodesToAdd: null);
                 }));
 
         // Swagger/OpenAPI
