@@ -126,10 +126,10 @@ public static class TenantEndpoints
     }
 
     private static async Task<IResult> ListTenants(
-        [FromQuery] string? searchTerm,
+        [FromServices] ISender sender,
+        [FromQuery] string? searchTerm = null,
         [FromQuery] int pageNumber = 1,
         [FromQuery] int pageSize = 20,
-        [FromServices] ISender sender = default!,
         CancellationToken cancellationToken = default)
     {
         var query = new ListTenantsQuery(searchTerm, pageNumber, pageSize);
@@ -199,12 +199,12 @@ public static class TenantEndpoints
     }
 
     private static async Task<IResult> ListLeases(
-        [FromQuery] Guid? propertyId,
-        [FromQuery] Guid? tenantId,
-        [FromQuery] LeaseStatus? status,
+        [FromServices] ISender sender,
+        [FromQuery] Guid? propertyId = null,
+        [FromQuery] Guid? tenantId = null,
+        [FromQuery] LeaseStatus? status = null,
         [FromQuery] int pageNumber = 1,
         [FromQuery] int pageSize = 20,
-        [FromServices] ISender sender = default!,
         CancellationToken cancellationToken = default)
     {
         var query = new ListLeasesQuery(propertyId, tenantId, status, pageNumber, pageSize);

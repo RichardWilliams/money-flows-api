@@ -109,13 +109,13 @@ public static class ExpenseEndpoints
     }
 
     private static async Task<IResult> ListExpenses(
-        [FromQuery] Guid? propertyId,
-        [FromQuery] Guid? categoryId,
-        [FromQuery] DateOnly? fromDate,
-        [FromQuery] DateOnly? toDate,
+        [FromServices] ISender sender,
+        [FromQuery] Guid? propertyId = null,
+        [FromQuery] Guid? categoryId = null,
+        [FromQuery] DateOnly? fromDate = null,
+        [FromQuery] DateOnly? toDate = null,
         [FromQuery] int pageNumber = 1,
         [FromQuery] int pageSize = 20,
-        [FromServices] ISender sender = default!,
         CancellationToken cancellationToken = default)
     {
         var query = new ListExpensesQuery(propertyId, categoryId, fromDate, toDate, pageNumber, pageSize);

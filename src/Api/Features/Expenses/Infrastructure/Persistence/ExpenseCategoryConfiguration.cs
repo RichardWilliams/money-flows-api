@@ -42,21 +42,21 @@ internal sealed class ExpenseCategoryConfiguration : IEntityTypeConfiguration<Ex
         builder.HasIndex(c => c.IsActive);
 
         // Seed default expense categories
-        var now = DateTime.UtcNow;
+        var now = new DateTime(2024, 1, 1, 0, 0, 0, DateTimeKind.Utc);
         builder.HasData(
-            ExpenseCategory.Create("Maintenance & Repairs", "MAINTENANCE", "Property maintenance and repair costs") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Utilities", "UTILITIES", "Gas, electricity, water, and other utilities") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Insurance", "INSURANCE", "Property and landlord insurance") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Council Tax", "COUNCIL_TAX", "Council tax payments") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Mortgage Interest", "MORTGAGE", "Mortgage interest payments") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Service Charges", "SERVICE_CHARGE", "Building or management service charges") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Ground Rent", "GROUND_RENT", "Ground rent payments") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Letting Agent Fees", "AGENT_FEES", "Letting agent fees and commissions") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Legal & Professional", "LEGAL", "Legal and professional fees") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Furnishings", "FURNISHINGS", "Furniture and white goods") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Gardening", "GARDENING", "Garden maintenance and landscaping") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Advertising", "ADVERTISING", "Property advertising costs") with { CreatedAt = now, UpdatedAt = now },
-            ExpenseCategory.Create("Other", "OTHER", "Miscellaneous expenses") with { CreatedAt = now, UpdatedAt = now }
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111111"), Name = "Maintenance & Repairs", Code = "MAINTENANCE", Description = "Property maintenance and repair costs", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111112"), Name = "Utilities", Code = "UTILITIES", Description = "Gas, electricity, water, and other utilities", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111113"), Name = "Insurance", Code = "INSURANCE", Description = "Property and landlord insurance", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111114"), Name = "Council Tax", Code = "COUNCIL_TAX", Description = "Council tax payments", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111115"), Name = "Mortgage Interest", Code = "MORTGAGE", Description = "Mortgage interest payments", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111116"), Name = "Service Charges", Code = "SERVICE_CHARGE", Description = "Building or management service charges", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111117"), Name = "Ground Rent", Code = "GROUND_RENT", Description = "Ground rent payments", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111118"), Name = "Letting Agent Fees", Code = "AGENT_FEES", Description = "Letting agent fees and commissions", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-111111111119"), Name = "Legal & Professional", Code = "LEGAL", Description = "Legal and professional fees", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-11111111111a"), Name = "Furnishings", Code = "FURNISHINGS", Description = "Furniture and white goods", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-11111111111b"), Name = "Gardening", Code = "GARDENING", Description = "Garden maintenance and landscaping", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-11111111111c"), Name = "Advertising", Code = "ADVERTISING", Description = "Property advertising costs", IsActive = true, CreatedAt = now, UpdatedAt = now },
+            new ExpenseCategory { Id = Guid.Parse("11111111-1111-1111-1111-11111111111d"), Name = "Other", Code = "OTHER", Description = "Miscellaneous expenses", IsActive = true, CreatedAt = now, UpdatedAt = now }
         );
     }
 }

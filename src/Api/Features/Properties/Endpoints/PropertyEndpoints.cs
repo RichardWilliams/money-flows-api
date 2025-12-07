@@ -108,10 +108,10 @@ public static class PropertyEndpoints
     }
 
     private static async Task<IResult> ListProperties(
-        [FromQuery] PropertyStatus? status,
+        [FromServices] ISender sender,
+        [FromQuery] PropertyStatus? status = null,
         [FromQuery] int pageNumber = 1,
         [FromQuery] int pageSize = 20,
-        [FromServices] ISender sender,
         CancellationToken cancellationToken = default)
     {
         var query = new ListPropertiesQuery(status, pageNumber, pageSize);
